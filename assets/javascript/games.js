@@ -12,10 +12,11 @@ var wins = 0;
 var lose = 0;
 var humanGuessAllowed = 10;
 
-//now we need to create a function to determine the users guess//
-//this was something I used from rock paper scissor//
+//now we need to create a function to capture the users guess//
+//this was something I used from the rock paper scissor activity//
 document.onkeypress = fuction(event) {
     var humanGuess = event.key;
+    document.getElementById("demo").innerHTML = "The pressed key was: " + humanGuess;
 }
 
 console.log(humanGuess);
