@@ -20,9 +20,9 @@ var arrayName = [];
 //document.getElementById("#humanGuessAllowed").innerHTML = humanGuessAllowed;
 
 //now we need to create a function to capture the users guess, this was something I used from the rock paper scissor activity//  
-document.onkeypress = function (event) {
+document.onkeyup = function (event) {
     humanGuess = event.key;
-    document.getElementById("#humanGuess").innerHTML = "The pressed key was: " + humanGuess;
+    document.getElementById("humanGuess").innerHTML = "The pressed key was: " + humanGuess;
     arrayName.push(humanGuess);
 }
 
