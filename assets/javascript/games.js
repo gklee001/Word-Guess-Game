@@ -52,6 +52,10 @@ document.onkeyup = function (event) {
         lose;
 
 }
+
+//maybe use .textContent instead?
+humanGuessAllowed.textContent = humanGuessAllowed;
+win.textContent = win;
 console.log(document.onkeyup)
 
 
