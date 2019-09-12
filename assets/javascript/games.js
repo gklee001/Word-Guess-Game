@@ -25,10 +25,10 @@ if (humanGuess !== computerGuess) {
     humanGuessAllowed--;
 }
 
-if (humanGuessAllowed == 0) {
+else if (humanGuessAllowed === 0) {
     lose++;
     humanGuessAllowed = 10;
-
+    console.log(humanGuessAllowed)
 }
 
 
