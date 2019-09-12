@@ -53,7 +53,7 @@ document.onkeyup = function (event) {
 
 }
 
-//maybe use .textContent instead?
+//want to display this information onto HTML
 humanGuessAllowed.textContent = humanGuessAllowed;
 win.textContent = win;
 console.log(document.onkeyup)
