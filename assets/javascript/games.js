@@ -5,7 +5,8 @@ var computerOptions = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 var win = 0;
 var lose = 0;
 var humanGuessAllowed = 10;
-var humanGuess = 0;
+var humanGuessArr = [];
+var humanGuessCount = 8;
 
 
 
@@ -16,22 +17,26 @@ var humanGuess = 0;
 //now we need to create a function to capture the users guess, this was something I used from the rock paper scissor activity//  
 document.onkeyup = function (event) {
 
+    humanGuessArr.push(event.key);
+    //push arr pushes up to 9 keys//
     humanGuess = event.key;
-    document.getElementById("humanGuess").innerHTML = "The pressed key was: " + humanGuess;
+    document.getElementById("humanGuess").innerHTML = "The pressed key was: " + humanGuessArr;
     console.log(humanGuess)
+    //humanGuessAllowed = 10;
 
-
-    if (humanGuess == computerGuess) {
+    if (humanGuess === computerGuess && humanGuessCount > 0) {
         win++;
-        humanGuessAllowed = 10;
-        humanGuess = 0;
+        humanGuessCount = 8;
 
     }
-    if (humanGuess !== computerGuess) {
+
+    if (humanGuess !== computerGuess && humanGuessCount != 0) {
         humanGuessAllowed--;
+    } else {
+        humanGuessCount--;
     }
 
-    else if (humanGuessAllowed === 0) {
+    if (humanGuessCount === 0 && humanGuessAllowed != 0) {
         lose++;
         humanGuessAllowed = 10;
         console.log(humanGuessAllowed)
@@ -49,6 +54,7 @@ document.onkeyup = function (event) {
     //add another reset function
 
 };
+
 
 //want to display this information onto HTML??? Its not working,
 
