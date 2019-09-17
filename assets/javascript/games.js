@@ -21,25 +21,39 @@ document.onkeyup = function (event) {
     //push arr pushes up to 9 keys//
     humanGuess = event.key;
     document.getElementById("humanGuess").innerHTML = "The pressed key was: " + humanGuessArr;
-    console.log(humanGuess)
+    console.log(humanGuessArr)
     //humanGuessAllowed = 10;
-
+    // This if statement says
+    // if humanguess euqual to compguess AND humanGuessCount is greater than 0 increment win and set humamGuessCount to 8
+    // this is ok 
     if (humanGuess === computerGuess && humanGuessCount > 0) {
         win++;
+        humanGuessArr.length = 0;
+        humanGuessAllowed = 10;
         humanGuessCount = 8;
 
     }
-
-    if (humanGuess !== computerGuess && humanGuessCount != 0) {
+    // if humanGuess does not match compGuess and humanGuessCount does not equal zero
+    // then humanGuessAllowed minus else humanGuessCount -1 
+    // humanGuessCount should be === 0 
+    // because u only wanna dec allowed guesses when human guest count is zero not when it doesnt equal zero
+    if (humanGuess !== computerGuess && humanGuessCount === 0) {
+        // you forgot to reset human count to 8 if they lose 
+        // and reset the humanguessarr to empty
+        humanGuessArr.length = 0;
+        humanGuessCount = 8;
         humanGuessAllowed--;
     } else {
         humanGuessCount--;
     }
 
-    if (humanGuessCount === 0 && humanGuessAllowed != 0) {
+    if (humanGuessCount === 0 && humanGuessAllowed === 0) {
         lose++;
+        //reset if they lose u forgot that 
+        humanGuessArr.length = 0;
         humanGuessAllowed = 10;
-        console.log(humanGuessAllowed)
+        humanGuessCount = 8
+        // console.log(humanGuessAllowed)
     }
 
     document.getElementById("humanGuessAllowed").innerHTML =
@@ -67,7 +81,3 @@ var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.l
 console.log(computerGuess)
 
 //need to create a condition that allows human guess up to 10 times, maybe do a loop? now I should use else if to give conditions for win or lose also need to decrease the number of guesses also
-
-
-
-
