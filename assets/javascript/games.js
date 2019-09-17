@@ -1,5 +1,5 @@
 //first step is to write a code to guess what letter the computer could be thinking//
-
+// This also needs to be in an array change the () to [] duhhhhhhmmmy;
 var computerOptions = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
 
 var win = 0;
@@ -31,6 +31,8 @@ document.onkeyup = function (event) {
         humanGuessArr.length = 0;
         humanGuessAllowed = 10;
         humanGuessCount = 8;
+        // forgot to add this to reset it
+        computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.length)];
 
     }
     // if humanGuess does not match compGuess and humanGuessCount does not equal zero
@@ -39,7 +41,7 @@ document.onkeyup = function (event) {
     // because u only wanna dec allowed guesses when human guest count is zero not when it doesnt equal zero
     if (humanGuess !== computerGuess && humanGuessCount === 0) {
         // you forgot to reset human count to 8 if they lose 
-        // and reset the humanguessarr to empty
+        // and reset the humanGuessArr to empty
         humanGuessArr.length = 0;
         humanGuessCount = 8;
         humanGuessAllowed--;
