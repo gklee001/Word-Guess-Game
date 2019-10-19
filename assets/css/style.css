@@ -1,7 +1,8 @@
-#computerGuess, #lose, #humanGuessCount, #humanGuessAllowed, #humanGuess {
-    width: 300px;
-    border: 15px solid green;
+.game {
+    width: 500px;
+    border: 15px solid olivedrab;
     padding: 50px;
     margin: 20px;
-    background: grey;
+    background: ivory;
+    font-family: cursive;
 }

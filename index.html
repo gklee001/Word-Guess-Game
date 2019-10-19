@@ -8,32 +8,35 @@
     <title>Document</title>
     <script src="./assets/javascript/games.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
     </script>
 
 </head>
 
 <body>
-    <div id="computerGuess"></div>
+    <div class="game">
+        <div id="computerGuess"></div>
 
-    <H1>
-        <p>Guess what letter I'm thinking of </p>
-        <p id='computerGuess'></p>
-    </H1>
-    <p>Wins: <div id="win"></div>
-    </p>
+        <H1>
+            <p>Guess what letter I'm thinking of </p>
+            <p id='computerGuess'></p>
+        </H1>
+        <p>Wins: <div id="win"></div>
+        </p>
 
-    <!--(# of times the user has guessed the letter correctly)-->
-    <p> Losses: <div id="lose"></div>
-    </p>
-    <!--(# of times the user has failed to guess the letter correctly after exhausting all guesses)-->
-    <p>Guesses Left: <div id="humanGuessCount"></div>
-    </p>
+        <!--(# of times the user has guessed the letter correctly)-->
+        <p> Losses: <div id="lose"></div>
+        </p>
+        <!--(# of times the user has failed to guess the letter correctly after exhausting all guesses)-->
+        <p>Guesses Left: <div id="humanGuessCount"></div>
+        </p>
 
-    <p>Your Guesses so far: <div id="humanGuessAllowed"></div>
-    </p>
-    <!--(# of guesses left. This will update)-->
-    <!--frist step was to link index to js-->
-    <div id="humanGuess"></div>
+        <p>Your Guesses so far: <div id="humanGuessAllowed"></div>
+        </p>
+        <!--(# of guesses left. This will update)-->
+        <!--frist step was to link index to js-->
+        <div id="humanGuess"></div>
+    </div>
 
 
 </body>
