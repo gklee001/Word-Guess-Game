@@ -7,11 +7,12 @@ var lose = 0;
 var humanGuessAllowed = 10;
 var humanGuessArr = [];
 var humanGuessCount = 8;
-
+var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+console.log(computerGuess);
 
 
 //document.getElementById("#humanGuess").innerHTML = humanGuess;
-//document.getElementById("#computerGuess").innerHTML = computerGuess;
+// document.getElementById("#computerGuess").innerHTML = computerGuess;
 //document.getElementById("#humanGuessAllowed").innerHTML = humanGuessAllowed;
 
 //now we need to create a function to capture the users guess, this was something I used from the rock paper scissor activity//  
@@ -20,54 +21,57 @@ document.onkeyup = function (event) {
     humanGuessArr.push(event.key);
     //push arr pushes up to 9 keys//
     humanGuess = event.key;
-    document.getElementById("humanGuess").innerHTML = "The pressed key was: " + humanGuessArr;
+    // document.getElementById("humanGuess").innerHTML = "The pressed key was: " + humanGuessArr;
     console.log(humanGuess)
-    //humanGuessAllowed = 10;
 
+    //humanGuessAllowed = 10;
+    console.log(humanGuess, computerGuess, humanGuessCount)
     if (humanGuess === computerGuess && humanGuessCount > 0) {
         win++;
         humanGuessCount = 8;
 
-    }
-
-    if (humanGuess !== computerGuess && humanGuessCount != 0) {
-        humanGuessAllowed--;
-    } else {
-        humanGuessCount--;
-    }
-
-    if (humanGuessCount === 0 && humanGuessAllowed != 0) {
-        lose++;
-        humanGuessAllowed = 10;
-        console.log(humanGuessAllowed)
-    }
-
-    document.getElementById("humanGuessAllowed").innerHTML =
-        humanGuessAllowed;
-
-    document.getElementById("win").innerHTML =
-        win;
-    document.getElementById("lose").innerHTML =
-        lose;
 
 
-    //add another reset function
+        if (humanGuess !== computerGuess && humanGuessCount != 0) {
+            humanGuessAllowed--;
+        } else {
+            humanGuessCount--;
+        }
 
-};
+        if (humanGuessCount === 0 && humanGuessAllowed != 0) {
+            lose++;
+            humanGuessAllowed = 10;
+            console.log(humanGuessAllowed)
+        }
+
+        document.getElementById("humanGuessAllowed").innerHTML =
+            humanGuessArr;
+
+        document.getElementById("win").innerHTML =
+            win;
+        document.getElementById("lose").innerHTML =
+            lose;
+
+        document.getElementById("computerGuess").innerHTML = computerGuess;
+        //add another reset function
+
+    };
+
+    function arry() {
+        var arr = [];
+        for (var I = 1; i <= 125; i++) {
+            document.write(arr);
+        }
+        console.log(arr)
+        //want to display this information onto HTML??? Its not working,
+
+        //need to declare an empty array for left over guesses
 
 
-//want to display this information onto HTML??? Its not working,
+        //now we create function to have the computer randomly pick a letter//
 
-//need to declare an empty array for left over guesses
+        // var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+        // console.log(computerGuess);
 
-
-//now we create function to have the computer randomly pick a letter//
-
-var computerGuess = computerOptions[Math.floor(Math.random() * computerOptions.length)];
-console.log(computerGuess)
-
-//need to create a condition that allows human guess up to 10 times, maybe do a loop? now I should use else if to give conditions for win or lose also need to decrease the number of guesses also
-
-
-
-
+        //need to create a condition that allows human guess up to 10 times, maybe do a loop? now I should use else if to give conditions for win or lose also need to decrease the number of guesses also//
+    };
