@@ -1,8 +1,8 @@
 .game {
     width: 500px;
-    border: 15px solid olivedrab;
+    border: 15px solid darkblue;
     padding: 50px;
     margin: 20px;
-    background: ivory;
-    font-family: cursive;
+    background: lightgrey;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
